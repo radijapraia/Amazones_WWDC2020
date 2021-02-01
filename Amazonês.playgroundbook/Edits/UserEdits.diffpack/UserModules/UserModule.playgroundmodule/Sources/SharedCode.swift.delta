@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import SpriteKit
+
+public let yellow = UIColor(red: 0.89, green: 0.69, blue: 0.34, alpha: 1)
+public let green = UIColor(red: 0.72, green: 0.65, blue: 0.27, alpha: 1)
+public let blue = UIColor(red: 0.14, green: 0.33, blue: 0.61, alpha: 1)
+public let orange = UIColor(red: 0.89, green: 0.49, blue: 0.24, alpha: 1)
+public let myRed = UIColor(red: 0.85, green: 0.26, blue: 0.17, alpha: 1)
+public let myBlue = UIColor(red: 0.17, green: 0.42, blue: 0.91, alpha: 1)
+// 87.5% red, 26.7% green and 17
+// 17.3, 42.7, 91.8
+
+let SF_FONT = "San Francisco Pro"
+
+public class Giria {
+    var name: String
+    var enName: [String]
+    var details: [String]
+    var cardTexture: SKTexture
+    var imgTexture: SKTexture
+    var spriteSheet: [SKTexture]
+    var audio: SKAudioNode
+    
+    init(name: String, enName: [String], filename: String, imgFilename: String, details: [String], spriteSheet: [String], audio audioFileName: String) {
+        self.name = name
+        self.enName = enName
+        self.details = details
+        self.cardTexture = SKTexture(imageNamed: filename)
+        self.imgTexture = SKTexture(imageNamed: imgFilename)
+        self.spriteSheet = []
+        for sprite in spriteSheet {
+            self.spriteSheet.append(SKTexture(imageNamed: sprite))
+        }
+        self.audio = SKAudioNode(fileNamed: audioFileName)
+    }
+}
+
+let colarSpriteSheet = ["colar_1.png", "colar_2.png"]
+
+let cortarSpriteSheet = ["cortar_1.png", "cortar_2.png"]
+
+let brocadoSpriteSheet = ["brocado_1.png", "brocado_2.png", "brocado_3.png"]
+
+let bubuiaSpriteSheet = [
+    "bubuia_1.png", "bubuia_2.png", "bubuia_3.png", "bubuia_4.png",
+    "bubuia_5.png", "bubuia_6.png", "bubuia_7.png", "bubuia_8.png"
+]
+
+let merendaSpriteSheet = ["merenda_1.png", "merenda_2.png", "merenda_3.png"]
+
+let caixapregoSpriteSheet = ["caixaprego_1.png", "caixaprego_2.png"]
+
+let chibataSpriteSheet = ["chibata_1.png", "chibata_2.png", "chibata_3.png"]
+
+let paideguaSpriteSheet = ["paidegua_1.png"]
+
+let MEANING = "Meaning: "
+
+public let girias = [
+    "Morreu de colar": Giria(name: "Morreu de colar",
+                             enName: ["[It] died glueing", "[something]"],
+                             filename: "card (morreu de colar).png",
+                             imgFilename: "Morreu de colar.png",
+                             details: ["\(MEANING)something that worked out;",
+                                       "something that met expectations."],
+                             spriteSheet: colarSpriteSheet,
+                             audio: "Morreu de colar_Noise_remover_17-05-20_20-20-47-626.wav"),
+    "Cortando": Giria(name: "Cortando",
+                      enName: ["Cutting"],
+                      filename: "card (cortando).png",
+                      imgFilename: "Cortando.png",
+                      details: ["\(MEANING)speak badly of someone,",
+                                "bad-mouth someone."],
+                      spriteSheet: cortarSpriteSheet,
+                      audio: "Cortando_Noise_remover_17-05-20_20-22-31-636.wav"),
+    "Brocado": Giria(name: "Brocado",
+                     enName: ["Drilled"],
+                     filename: "card (brocado).png",
+                     imgFilename: "Brocado.png",
+                     details: ["\(MEANING)hungry"],
+                     spriteSheet: brocadoSpriteSheet,
+                     audio: "Tô-brocado_Noise_remover_17-05-20_20-17-37-080.wav"),
+    "Só de bubuia": Giria(name: "Só de bubuia",
+                           enName: ["Just floating"],
+                           filename: "card (bubuia).png",
+                           imgFilename: "Só de bubuia.png",
+                           details: ["\(MEANING)when someone is resting,",
+                                     "not doing anything."],
+                           spriteSheet: bubuiaSpriteSheet,
+                           audio: "Só-de-bubuia_Noise_remover_17-05-20_20-19-00-819.wav"),
+    "Pega tua merenda": Giria(name: "Pega tua merenda",
+                              enName: ["Take your snack"],
+                              filename: "card (pega tua merenda).png",
+                              imgFilename: "Pega a tua merenda.png",
+                              details: ["\(MEANING)it serves you right."],
+                              spriteSheet: merendaSpriteSheet,
+                              audio: "Pega-a-tua-mere_Noise_remover_17-05-20_20-19-43-762.wav"),
+    "Caixa prego": Giria(name: "Caixa prego",
+                         enName: ["Nail box"],
+                         filename: "card (caixa prego).png",
+                         imgFilename: "Caixa prego.png",
+                         details: ["\(MEANING)a place that is far away."],
+                         spriteSheet: caixapregoSpriteSheet,
+                         audio: "Caixa prego_Noise_remover_17-05-20_20-22-01-820.wav"),
+    "Chibata no balde": Giria(name: "Chibata no balde",
+                              enName: ["Whip on the",
+                                       "bucket"],
+                              filename: "card (chibata no balde).png",
+                              imgFilename: "Chibata no balde.png",
+                              details: ["\(MEANING)something or someone that",
+                                        "is very good, very cool."],
+                              spriteSheet: chibataSpriteSheet,
+                              audio: "Chibata no bald_Noise_remover_17-05-20_20-21-29-174.wav"),
+    "Pai dégua": Giria(name: "Pai dégua",
+                        enName: ["Mare's father"],
+                        filename: "card (pai dégua).png",
+                        imgFilename: "Pai d'égua.png",
+                        details: ["\(MEANING)something or someone that",
+                                  "is very good, very cool."],
+                        spriteSheet: paideguaSpriteSheet,
+                        audio: "Pai-dégua_Noise_remover_17-05-20_20-20-12-986.wav")
+]
+
+public func createButton(text: String, name: String, color: UIColor) -&gt; SKShapeNode {
+    var button = SKShapeNode(rect: CGRect(x: -60, y: -180, width: 120, height: 30))
+    button.strokeColor = color
+    var label = SKLabelNode(text: text)
+    label.fontSize = 20
+    label.fontColor = color
+    label.position = .init(x: 0, y: -173)
+    button.addChild(label)
+    label.name = name
+    button.name = name
+    return button
+}
+
+public func addAudio() -&gt; SKAudioNode {
+    let clickAudio = SKAudioNode(fileNamed: "click_no_noise")
+    clickAudio.autoplayLooped = false
+    clickAudio.name = "clickAudio"
+    return clickAudio
+}
+
+public func addBorder(fillColor: UIColor = .white) -&gt; SKShapeNode {
+    let border = SKShapeNode(rect: CGRect(x: -173, y: -240, width: 346, height: 480))
+    border.strokeColor = fillColor
+    border.lineWidth = 1.5
+    return border
+}
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 6800}</string>
+			<key>OriginalContent</key>
+			<string>// Code inside modules can be shared between pages and other source files.
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 75}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>UserModules/UserModule.playgroundmodule/Sources/SharedCode.swift</string>
+</dict>
+</plist>

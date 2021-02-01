@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ Intro
+ 
+ All languages ​​have variants.
+ Linguistic variants are different ways of manifesting the language, which adapts to the different socio-cultural characteristics of the different groups of speakers.
+ Current linguistics reveals that every language is highly heterogeneous and this heterogeneity manifests itself in terms of diversity, whether regional, social or even individual, and must be understood by what characterizes someone.
+ The linguistic variants are not ugly or beautiful, right or wrong, they are just different, and it is a bit of this “different” from Amazonas that I want to share with you!
+ */
+
+startAmazones()
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 641}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
